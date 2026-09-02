@@ -14,15 +14,28 @@ public class ListIteratorTest
 	private ArrayList<String> list;
 
 	public ListIteratorTest(String line) {
+      setTest(line);
 	}
 
 	public void setTest(String line) {
+      list = new ArrayList<String>();
+      String[] words = line.split(" ");
+      for (int i = 0; i < words.length; ++i) {
+         list.add(words[i]);
+      }
 	}
 
 	public void replace(String toRemove, String replaceWith) {
+      ListIterator<String> it = list.listIterator();
+      while (it.hasNext()) {
+         String str = it.next();
+         if (str.equals(toRemove)) {
+            it.set(replaceWith);
+         }
+      }
 	}
 
 	public String toString() {
-		return "";
+		return "" + list;
 	}
 }
