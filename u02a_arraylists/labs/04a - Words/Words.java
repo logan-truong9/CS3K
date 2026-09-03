@@ -58,8 +58,14 @@ class Words
 	
 	public int countWordsWithXChars(int size)
 	{
-		int count= String.valueOf(words.get(size)).length();
+		int count = 0;
       
+      for (int i = 0; i < words.size(); ++i) {
+         Word str = words.get(i);
+         if (str.toString().length() == size) {
+            ++count;
+         }
+      }
 
 		return count;
 	}

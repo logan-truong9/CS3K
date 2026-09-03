@@ -25,11 +25,28 @@ public class Lab04a
 		out.println("\nafter removing words with 3 chars \n"+test);
 		out.println("\n\n");		
       
-      Words test1 = new Words("one two three four five six seven alligator");
-		out.println(test1);
-		out.println("word with 2 vowels = ");
-		test1.removeWordsWithXChars(3);
-		out.println("\nafter removing words with 3 chars \n"+test1);
+      Words test2 = new Words("fun fly four six times ten plus eight");
+		out.println(test2);
+      out.println("word with 2 vowels = "+test2.countWordsWithXVowels(2));
+		out.println("word with 3 vowels = "+test2.countWordsWithXVowels(3));
+		out.println("word with 4 vowels = "+test2.countWordsWithXVowels(4));
+		out.println("word with 2 chars = "+test2.countWordsWithXChars(2));
+		out.println("word with 4 chars = "+test2.countWordsWithXChars(4));
+		out.println("word with 5 chars = "+test2.countWordsWithXChars(5));
+		test2.removeWordsWithXChars(3);
+		out.println("\nafter removing words with 3 chars \n"+test2);
+		out.println("\n\n");		
+      
+      Words test3 = new Words("alligator chicken dog cat pig buffalo");
+		out.println(test3);
+      out.println("word with 2 vowels = "+test3.countWordsWithXVowels(2));
+		out.println("word with 3 vowels = "+test3.countWordsWithXVowels(3));
+		out.println("word with 4 vowels = "+test3.countWordsWithXVowels(4));
+		out.println("word with 2 chars = "+test3.countWordsWithXChars(2));
+		out.println("word with 4 chars = "+test3.countWordsWithXChars(4));
+		out.println("word with 5 chars = "+test3.countWordsWithXChars(5));
+		test3.removeWordsWithXChars(3);
+		out.println("\nafter removing words with 3 chars \n"+test2);
 		out.println("\n\n");		
 
 				
