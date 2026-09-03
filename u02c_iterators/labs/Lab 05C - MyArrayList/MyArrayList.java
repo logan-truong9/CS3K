@@ -15,12 +15,12 @@ public class MyArrayList<T> implements Iterable<T>
 	
    @SuppressWarnings("unchecked")
    public MyArrayList(int initSize) {
-   
+      list = new T[initSize];
    }
 	
    public void add(T value)
    {
-   
+      
    }
 	
    public void add(int index, T value)
@@ -34,7 +34,7 @@ public class MyArrayList<T> implements Iterable<T>
    }
 	
    public T get(int index) {
-      return null;
+      return (T) list[index];
    }
 	
    public int indexOf(T value)
@@ -57,11 +57,11 @@ public class MyArrayList<T> implements Iterable<T>
    }
 	
    public T set(int index, T element) {
-      return null;
+      return list[index] = element;
    }
 	
    public int size() {
-      return 0;
+      return list.length;
    }
 	
    public int capacity() {
