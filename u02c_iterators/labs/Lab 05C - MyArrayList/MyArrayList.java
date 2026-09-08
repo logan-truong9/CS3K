@@ -15,22 +15,30 @@ public class MyArrayList<T> implements Iterable<T>
 	
    @SuppressWarnings("unchecked")
    public MyArrayList(int initSize) {
-      list = new T[initSize];
+      list = (T[]) new Object[initSize];
    }
 	
    public void add(T value)
    {
-      
+      if (count == list.length) {
+         resizeArray();
+      }
+      list[++count] = value;
    }
 	
    public void add(int index, T value)
    {
-   
+      if (count == list.length) {
+         resizeArray();
+      }
+      list[index] = value;
    }
 	
    public void clear()
    {
-   
+      for (T value : list) {
+         value = null;
+      }
    }
 	
    public T get(int index) {
@@ -39,7 +47,13 @@ public class MyArrayList<T> implements Iterable<T>
 	
    public int indexOf(T value)
    {
-      return 0;
+      int index = -1;
+      for (int i = 0; i < list.length; ++i) {
+         if (list[i] == value) {
+            index = i;
+         }
+      }
+      return index;
    }
 	
    public boolean remove(T value)
