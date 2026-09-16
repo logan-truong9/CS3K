@@ -15,14 +15,23 @@ public class Grid
 
 	public Grid()
 	{
+      grid = new String[0][0];
 	}
 
 	public Grid(int rows, int cols, String[] vals)
 	{
+       setGrid(rows, cols, vals);
 	}
 	
 	public void setGrid(int rows, int cols, String[] vals)
 	{
+      grid = new String[rows][cols];
+      for (int r = 0; r < rows; ++r) {
+         for (int c = 0; c < cols; ++c) {
+            grid[r][c] = vals[(int)(Math.random() * vals.length)];
+         }
+      }  
+      
 	}
 
 	public int findMax(String val)

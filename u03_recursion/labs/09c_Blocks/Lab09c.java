@@ -13,5 +13,7 @@ public class Lab09c
 {
 	public static void main( String args[] ) throws IOException
 	{
+      ;
+      Grid test = new Grid(String[] vals= new String{"a", "e", "i", "o", "u"});
 	}
 }
