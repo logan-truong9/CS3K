@@ -13,7 +13,11 @@ public class Lab09c
 {
 	public static void main( String args[] ) throws IOException
 	{
-      ;
-      Grid test = new Grid(String[] vals= new String{"a", "e", "i", "o", "u"});
+      String[] vals = {"A", "E", "I", "O", "U"};
+      Grid test = new Grid(6, 6, vals);
+      out.println(test);
+      out.println("\n A count == " +test.findMax("A"));
+      out.println("\n E count == " +test.findMax("E"));
+      out.println("\n I count == " +test.findMax("I"));
 	}
 }

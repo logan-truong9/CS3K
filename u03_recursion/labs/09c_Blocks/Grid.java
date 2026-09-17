@@ -36,18 +36,45 @@ public class Grid
 
 	public int findMax(String val)
 	{
-		int count=-1;
-		return count;
+      int max = 0;
+      for (int r = 0; r < grid.length; ++r) {
+         for (int c =  0; c < grid[r].length; ++c) {
+        
+            int count = findMax(r, c, val);
+            if (count > max) {
+               max = count;
+            }
+            
+         } 
+         
+      }
+		return max;
+
 	}
 
 	private int findMax(int r, int c, String search)
 	{
-		return 0;
+      if ((r > 0 && r < grid.length - 1) && (c > 0 && c < grid[c].length - 1) && grid[r][c].equals(search)) {
+               grid[r][c] = " ";
+               return 1
+               + findMax(r - 1, c, search)
+               + findMax(r + 1, c, search)
+               + findMax(r, c - 1, search)
+               + findMax(r, c + 1, search);
+            }
+       return 0;
+
 	}
 
 	public String toString()
 	{
 		String output="";
+      for (int row = 0; row < grid.length; ++row) {
+         for (int col = 0; col < grid[row].length; ++col) {
+            output += grid[row][col];
+         }
+         output += "\n";
+      }
 		return output;
 	}
 }
