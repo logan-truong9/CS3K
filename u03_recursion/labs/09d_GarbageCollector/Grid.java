@@ -19,7 +19,7 @@ public class Grid
 
 	public Grid(int rows, int cols)
 	{
-	
+	   setSize(rows, cols);
 	
 	}
 
@@ -30,7 +30,7 @@ public class Grid
 
 	public void setSpot(int row,int col, Cell val)
 	{
-	
+	   grid[row][col] = val;
 	
 	}
 	
@@ -62,9 +62,13 @@ public class Grid
 				Cell spot = grid[r][c];
 				
 				//if the current spot is not null
-
-
+            if (getSpot(r, c) != null) {
+               drawGrid(window);
+            }
 				//else
+            else {
+               full = false;
+            }
 
 			}
 		}
@@ -75,13 +79,14 @@ public class Grid
 	{
 		String output="";
 		//for loop for row
-	
+	   for (int r = 0; r < grid.length; ++r) {
 	
 			//for loop for col
-	
-	
-	
-	
+	      for (int c = 0; c < grid[r].length; ++c) {
+            output += grid[r][c] + " ";
+	      }
+	      output += "\n";
+	   }
 	
 	
 		return output;

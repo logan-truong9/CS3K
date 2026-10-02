@@ -17,14 +17,30 @@ public class UniquesDupes
 		Set<String> uniques = new TreeSet<String>();
 
 		//add code
-
+      
+      String[] list = input.split(" ");
+      for (String word : list) {
+         if (!uniques.contains(word)) {
+            uniques.add(word);
+         }
+      }
 		return uniques;
 	}
 
 	public static Set<String> getDupes(String input)
 	{
 		//add code
+      Set<String> uniques = new TreeSet<String>();
+      Set<String> dupes = new TreeSet<String>();
+      
+      String[] list = input.split(" ");
+      for (String word: list) {
+         if (!uniques.add(word)) {
+            dupes.add(word);
+         }
+      }
+            
 		
-		return null;
+		return dupes;
 	}
 }

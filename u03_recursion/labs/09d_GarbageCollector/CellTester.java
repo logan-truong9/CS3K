@@ -15,6 +15,7 @@ public class CellTester
 		out.println(CellOne);
 		
 		Cell redChecker = new ColoredCell(false);
+
 		out.println(redChecker);	
 		
 		Cell theShoe = new ColoredCell(100,100,true);
