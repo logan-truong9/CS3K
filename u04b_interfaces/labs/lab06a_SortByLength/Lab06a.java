@@ -16,16 +16,18 @@ public class Lab06a
 	public static void main( String args[] ) throws IOException
 	{
 		//add test cases
-      Scanner file = new Scanner (new File("lab06.dat"));
-      ArrayList<String> list = new ArrayList<>();
+      Scanner file = new Scanner (new File("lab06a.dat"));
+
       ArrayList<Word> words = new ArrayList<>();
       while (file.hasNext()) {
-         list.add(file.next());
+         words.add(new Word(file.next()));
       }
-      for (int i = 1; i < list.size(); ++i) {
-         words.add((Word)list.get(i));
+      
+      Collections.sort(words);
+      
+      for (Word w: words) {
+         out.println(w);
       }
-      Word test = new Word(words);
       
 	}
 }

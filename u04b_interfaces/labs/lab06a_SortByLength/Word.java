@@ -12,10 +12,9 @@ public class Word implements Comparable<Word>
 	//add an instance variable and a constructor
    
    String str = "";
-   ArrayList<Word> list;
    
-   public Word(ArrayList<Word> wrd) {
-      list = wrd;
+   public Word(String s) {
+      str = s;
    }
 
 	//add a compareTo
@@ -32,6 +31,6 @@ public class Word implements Comparable<Word>
 	//add a toString
    
    public String toString() {
-      return str;
+      return str;   
    }
 }

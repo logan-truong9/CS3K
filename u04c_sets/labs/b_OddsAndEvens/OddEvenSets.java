@@ -17,10 +17,24 @@ public class OddEvenSets
 
 	public OddEvenSets()
 	{
+      odds = new TreeSet<>();
+      evens = new TreeSet<>();
 	}
 
 	public OddEvenSets(String line)
 	{
+      odds = new TreeSet<>();
+      evens = new TreeSet<>();
+      Scanner chopper = new Scanner(line);
+      while (chopper.hasNextInt()) {
+         int num = chopper.nextInt();
+         if (num % 2 == 0) {
+            evens.add(num);
+         }
+         else {
+            odds.add(num);
+         }
+      }
 	}
 
 	public String toString()

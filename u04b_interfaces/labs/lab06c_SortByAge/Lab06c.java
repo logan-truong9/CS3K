@@ -16,5 +16,20 @@ public class Lab06c
 	public static void main ( String[] args ) throws IOException
 	{
 	   //add test cases
+      Scanner file = new Scanner(new File("lab06c.dat"));
+      ArrayList<Person> person = new ArrayList<>();
+      
+      if (file.hasNextInt()) {
+			int count = file.nextInt();
+			for (int i = 0; i < count && file.hasNext(); i++) {
+				person.add(new Person(file.nextInt(), file.nextInt(), file.nextInt(), file.next()));
+			}
+		}
+            
+      Collections.sort(person);
+      
+      for (Person p : person) {
+         out.println(p);
+      }
 	}
 }

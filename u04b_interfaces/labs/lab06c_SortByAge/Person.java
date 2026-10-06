@@ -15,15 +15,38 @@ public class Person implements Comparable<Person>
 
   public Person( int y, int m, int d, String n)
   {
+      myYear = y;
+      myMonth = m;
+      myDay = d;
+      myName = n;
   }
 
   public int compareTo( Person other )
   {
-  	 return 0;
+     
+      if (this.myYear > other.myYear) {
+         return -1;
+      }
+      if (this.myYear < other.myYear) {
+         return 1;
+      }
+      if (this.myMonth > other.myMonth) {
+         return -1;
+      }
+      if (this.myMonth < other.myMonth) {
+         return 1;
+      }
+      if (this.myDay > other.myDay) {
+         return -1;
+      }
+      if (this.myDay < other.myDay) {
+         return 1;
+      }
+      return this.myName.compareTo(other.myName);
   }
 
   public String toString( )
   {
-     return "";
+     return String.format("%10s  DOB:%d-%02d-%02d", myName, myYear, myMonth, myDay);
   }
 }

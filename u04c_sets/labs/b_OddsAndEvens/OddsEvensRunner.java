@@ -14,6 +14,14 @@ public class OddsEvensRunner
 	public static void main( String args[] ) throws IOException
 	{
 		//more test cases
-				
+		Scanner file = new Scanner(new File("labB.dat"));
+      
+      while (file.hasNextLine()) {
+         String line = file.nextLine();
+         if (!line.isEmpty()) {
+            OddEvenSets test = new OddEvenSets(line);
+            out.println(test);
+         }
+      }
 	}
 }
