@@ -15,7 +15,7 @@ public class Lab09d
        *  Fix <code>displaySet</code> set each line of output
        *  is at most 63 characters long.
        */
-      /*
+      
       String s2 = "boat";
       out.println("\nPermutations for " + s2 + " are: \n");
       out.println(displaySet(PermutationSet.permutations(s2)));
@@ -26,7 +26,7 @@ public class Lab09d
       out.println("Test null to make sure you're writing robust programs.");
       out.println("Your program should not crash!");
       out.println(displaySet(PermutationSet.permutations(null)));
-      */
+      
    }
    
    public static String displaySet(Set<String> perms) {
@@ -35,6 +35,11 @@ public class Lab09d
       int length = 0;
       for (String word : perms) {
          // Modify the body of this loop to fix the output.
+         length += word.length();
+         if (length >= 63) {
+            output += "\n";
+            length = 0;
+         }
          output += word + " ";
       }
       return output;
