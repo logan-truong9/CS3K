@@ -12,24 +12,24 @@ public class PermutationSet
       }
       // If `word` is the empty string, add it to your set before returning the set.
       if (word.length() == 0) {
-         perm.add(word);
+         perm.add("");
          return perm;
       }
       
       // Store the first character
-      String firstChar = word.substring(0, 1);
+      char firstChar = word.charAt(0);
       // Store the rest of the string
-      String rem = word.substring(1, word.length());
+      String rem = word.substring(1);
       // Call permutations() on rem and store the set it gives you
-      perm = permutations(rem);
+      Set<String> permSet = permutations(rem);
       // Loop through each permutation of rem
          // Loop through each spot of the current word from rem 
             // Insert <code>init</code> at the current spot
             // Add this permutation to our set of permutations.
-      String current = "";
-      for (int j = 0; j < perm.size(); ++j) {
-         for (int i = 0; i < rem.length(); ++i) {
-            current = rem.substring(0, i) + firstChar + rem.substring(i);
+      
+      for (String p : permSet) {
+         for (int i = 0; i <= p.length(); ++i) {
+            String current = p.substring(0, i) + firstChar + p.substring(i);
             perm.add(current);
          }
       }
