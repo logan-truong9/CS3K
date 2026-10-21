@@ -67,10 +67,10 @@ public class GameBoard extends Canvas implements MouseListener
 			if(determineWinner(window))
 			{
 			  //make a new board	
-           GameBoard game = new GameBoard();
+          // GameBoard game = new GameBoard();
 			  
 			  //clear the screen
-           repaint();
+           //repaint();
            
 			}	
 			mouseClicked = false;
