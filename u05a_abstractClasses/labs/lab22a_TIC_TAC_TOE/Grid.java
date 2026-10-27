@@ -11,6 +11,7 @@ import java.awt.Font;
 public class Grid
 {
 	private Cell[][] grid;
+
 	
 	public Grid()
 	{
@@ -19,19 +20,18 @@ public class Grid
 
 	public Grid(int rows, int cols)
 	{
-
+      setSize(rows, cols);
 
 	}
 
 	public void setSize(int rows, int cols)
 	{
-
-
+      grid = new Cell[rows][cols];
 	}
 
 	public void setSpot(int row,int col, Cell val)
 	{
-
+      grid[row][col] = val;
 
 	}
 	
@@ -42,12 +42,12 @@ public class Grid
 	
 	public int getNumRows()
 	{
-		return 0;
+		return grid.length;
 	}
 	
 	public int getNumCols()
 	{
-		return 0;
+		return grid[0].length;
 	}
 
 	public boolean drawGrid(Graphics window)
@@ -65,17 +65,33 @@ public class Grid
 					
 					//else
 
-
+      for (int r = 0; r < getNumRows(); ++r) {
+         for (int c = 0; c < getNumCols(); ++c) {
+            if (getSpot(r, c) == null) {
+               full = false;
+            }
+            else {
+               full = true;
+            }
+         }
+      }
 
 		return full;
 	}
 	
 	public String toString()
 	{
-		String output="";
+		String output= "";
+      
+      for (int r = 0; r < getNumRows(); ++r) {
+         for (int c = 0; c < getNumCols(); ++c) {
+            output += getSpot(r, c) + " ";
+         }
+      }
 
+		
 
-
+   
 
 
 		return output;
