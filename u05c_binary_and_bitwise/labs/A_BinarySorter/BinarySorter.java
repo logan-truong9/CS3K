@@ -16,11 +16,20 @@ public class BinarySorter
    public static void main ( String[] args ) throws IOException
    {
    	// Make an ArrayList
+      ArrayList<Number> numList = new ArrayList<>();
       
       // Populate the list from the file.
-      
+      Scanner scan = new Scanner(new File("numbers.dat"));
+      if (scan.hasNextInt()) {
+         int size = scan.nextInt();
+      }
+      while (scan.hasNext()) {
+         numList.add(new Number(scan.next(), scan.nextInt()));
+      }
+         
       
       // Sort the list.
+      Collections.sort(numList);
       
       out.printf("%-6s %-4s %-6s %s %n", "number", "base", "base10", "binary");
       for(Number n : numList)
