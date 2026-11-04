@@ -42,6 +42,13 @@ public class Number implements Comparable<Number>
       if (this.base10 < param.base10) {
          return -1;
       }
+      if (this.number.length() > param.number.length()) {
+         return 1;
+      }
+      if (this.number.length() < param.number.length()) {
+         return -1;
+      }
+
       return 0;
       
 	}
