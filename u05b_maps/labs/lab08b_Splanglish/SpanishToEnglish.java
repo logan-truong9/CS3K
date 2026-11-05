@@ -14,7 +14,7 @@ public class SpanishToEnglish
 
 	public SpanishToEnglish()
 	{
-
+      pairs = new TreeMap<String,String>();
 
 
 	}
@@ -23,7 +23,7 @@ public class SpanishToEnglish
 	{
 		String[] list = entry.split(" ");
 
-
+      pairs.put(list[0], list[1]);
 
 
 
@@ -32,7 +32,7 @@ public class SpanishToEnglish
 	public String translate(String sent)
 	{
 		Scanner chop = new Scanner(sent);
-		String output ="";
+		String output = pairs.get(sent);
 
 
 
