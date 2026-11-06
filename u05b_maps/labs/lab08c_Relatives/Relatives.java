@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import java.util.Scanner;
+
+
+
 
 public class Relatives
 {
@@ -16,30 +18,28 @@ public class Relatives
 
 	public Relatives()
 	{
-
+      map = new TreeMap<String,Set<String>>();
 
 
 	}
 
 	public void setPersonRelative(String line)
 	{
-		String[] personRelative = line.split(" ");
+      String[] personRelative = line.split(" ");
+      
+      if (!map.containsKey(personRelative[0])) {
+         map.put(personRelative[0], new TreeSet<String>());
+      }
+      if (personRelative.length == 2) {
+         map.get(personRelative[0]).add(personRelative[1]);
+      }
+   
+   }
 
-
-
-
-
-
-
-
-
-
-	}
-
-
-	public String getRelatives(String person)
+	public Set<String> getRelatives(String person)
 	{
-		return "";
+      
+      return map.get(person);
 	}
 
 
@@ -47,7 +47,7 @@ public class Relatives
 	{
 		String output="";
 
-
+      
 
 
 
