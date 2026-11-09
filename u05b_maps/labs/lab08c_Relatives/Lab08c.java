@@ -28,5 +28,7 @@ public class Lab08c
       }
       
       out.println(fam);
+      
+      out.
 	}
 }

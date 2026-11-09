@@ -47,13 +47,13 @@ public class Relatives
 	{
 		String output="";
 
+      Set<String> fam = map.keySet();
       
-
-
-
-
-
-
+      for (Map.Entry<String, Set<String>> entry : map.entrySet()) {
+         if (!(entry.getKey().equals(""))) {
+            output += entry.getKey() + " is related to " + entry.getValue() + "\n";
+         }
+      }
 		return output;
 	}
 }
